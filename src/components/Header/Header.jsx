@@ -1,6 +1,8 @@
 import React from 'react';
 import {
-  Logo,
+  LogoBox,
+  CompanyName,
+  CompanyTitle,
   HeaderWrap,
   AppNameBlock,
 } from './styles';
@@ -8,11 +10,10 @@ import {
 function Header() {
   return (
     <HeaderWrap>
-      <Logo>
-        {/* <img /> */}
-        <div>REQUESTUM</div>
-        <div>web development company</div>
-      </Logo>
+      <LogoBox>
+        <CompanyName>REQUESTUM</CompanyName>
+        <CompanyTitle>web development company</CompanyTitle>
+      </LogoBox>
       <AppNameBlock>
         Github users search app
       </AppNameBlock>

@@ -9,6 +9,7 @@ import mainReduser from './reducers/mainReduser';
 import sagas from './sagas';
 import { HashRouter as Router } from "react-router-dom";
 import './reset-styles.css';
+import './app.css';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -36,20 +36,20 @@ const startURL = getURL({});
 const VMain = ({
   isLoading,
   localData,
-  message,
+  // message,
   fetchLocalData,
 }) => {
   const { items, total } = localData;
 
   const [url, setUrl] = useState(startURL);
   const [inputValue, setInputValue] = useState('');
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [perPage, setPerPage] = useState(10);
   const [totalPages, setTotalPages] = useState(0);
   const [history, setHistory] = useState([]);
 
   const setValue = (e) => {
-    setInputValue(e.target.value)
+    setInputValue(e.target.value);
   }
 
   const addHistoryItem = (keyWord) => {
@@ -64,11 +64,13 @@ const VMain = ({
     return;
   }
 
-  const changePerPage = (e) => setPerPage(e.target.value);
+  const changePerPage = (e) => {
+    setPerPage(Number(e.target.value))
+  };
 
   const setPrevPage = () => page > 1 && setPage(page - 1);
 
-  const setNextPage = () => setPage(page + 1);
+  const setNextPage = () => page < totalPages && setPage(page + 1);
 
   useEffect(() => {
     const oldHistory = localStorage.getItem('searchHistory');
@@ -79,7 +81,13 @@ const VMain = ({
   }, []);
 
   useEffect(() => {
-    setTotalPages(Math.ceil(total / perPage));
+    if (total) {
+      setPage(1);
+      setTotalPages(Math.ceil(total / perPage));
+    } else {
+      setPage(0);
+      setTotalPages(0);
+    }
   }, [total]);
 
   useEffect(() => {

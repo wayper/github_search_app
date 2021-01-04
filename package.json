@@ -10,7 +10,7 @@
     "build": "webpack",
     "start": "webpack-dev-server --open",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Dima Ivanov",
   "license": "ISC",

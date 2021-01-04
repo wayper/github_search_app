@@ -7,7 +7,7 @@ export const CardListWrap = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.5em;
 
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: 1fr;
   }

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { CardListWrap } from './styles';
 import Card from '../Card';
 
-function CardList({ data }) {
+function CardList({ cardList }) {
   return (
     <CardListWrap>
-      {data.map(({ id, login, name, type, description, language }) => {
+      {cardList.map(({ id, login, name, type, description, language }) => {
         const cardContent = [
           { title: 'Name', text: name },
           { title: 'Type', text: type },
@@ -27,13 +27,13 @@ function CardList({ data }) {
 }
 
 CardList.propTypes = {
-  data: PropTypes.arrayOf(
+  cardList: PropTypes.arrayOf(
     PropTypes.object
   )
 };
 
 CardList.defaultProps = {
-  data: [],
+  cardList: [],
 };
 
 export default CardList;

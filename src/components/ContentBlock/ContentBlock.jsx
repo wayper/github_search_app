@@ -8,18 +8,18 @@ import {
 } from './styles';
 
 function ContentBlock({
+  page,
   total,
   value,
-  page,
   perPage,
-  totalPages,
   history,
   cardList,
   onChange,
   isLoading,
-  changePerPage,
+  totalPages,
   setPrevPage,
   setNextPage,
+  changePerPage,
 }) {
   return (
     <ContentBlockWrap>
@@ -40,22 +40,42 @@ function ContentBlock({
       {(
         isLoading
           ? <div>Loading ...</div>
-          : <CardList data={cardList}/>
+          : <CardList cardList={cardList}/>
       )}
     </ContentBlockWrap>
   )
 }
 
 ContentBlock.propTypes = {
+  page: PropTypes.number,
+  total: PropTypes.number,
   value: PropTypes.string,
   history: PropTypes.arrayOf(PropTypes.string),
+  perPage: PropTypes.number,
+  cardList: PropTypes.arrayOf(
+    PropTypes.object
+  ),
   onChange: PropTypes.func,
+  isLoading: PropTypes.bool,
+  totalPages: PropTypes.number,
+  setPrevPage: PropTypes.func,
+  setNextPage: PropTypes.func,
+  changePerPage: PropTypes.func,
 };
 
 ContentBlock.defaultProps = {
+  page: 0,
+  total: 0,
   value: '',
+  perPage: 0,
   history: [],
+  cardList: [],
   onChange: () => {},
+  isLoading: false,
+  totalPages: 0,
+  setPrevPage: () => {},
+  setNextPage: () => {},
+  changePerPage: () => {},
 };
 
 export default ContentBlock;
