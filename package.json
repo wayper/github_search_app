@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/wayper/github_search_app",
   "name": "search_app",
   "version": "1.0.0",
   "description": "ReactJS SPA GitHub Search App",
@@ -7,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src",
     "build": "webpack",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Dima Ivanov",
   "license": "ISC",
@@ -19,6 +22,7 @@
     "css-loader": "^5.0.0",
     "eslint": "^7.10.0",
     "eslint-plugin-react": "^7.21.5",
+    "gh-pages": "^3.1.0",
     "redux-devtools": "^3.7.0",
     "source-map-loader": "^1.1.2",
     "style-loader": "^2.0.0",
