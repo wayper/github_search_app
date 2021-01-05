@@ -13,7 +13,7 @@ function Pagination({
 }) {
   return (
     <PaginationWrap>
-      <button onClick={setPrevPage} disabled={!total || page == 1 && true}>Prev</button>
+      <button onClick={setPrevPage} disabled={!total || page <= 1 && true}>Prev</button>
       <div>Page: {page}/{totalPages}</div>
       <SelectPerPage value={perPage} onChange={changePerPage}>
         <option value={10}>10 rows</option>
@@ -22,7 +22,7 @@ function Pagination({
         <option value={100}>100 rows</option>
       </SelectPerPage>
       <div>Records: {total}</div>
-      <button onClick={setNextPage} disabled={!total || page == totalPages && true}>Next</button>
+      <button onClick={setNextPage} disabled={!total || page >= totalPages && true}>Next</button>
     </PaginationWrap>
   )
 }

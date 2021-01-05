@@ -43,6 +43,7 @@ export const Input = styled.input`
   border: none;
   background-color: white;
   font-size: 1.2em;
+  width: 80%;
   outline:none;
   user-select: none;  
   &::-moz-focus-outer, &::-moz-focus-inner {
@@ -51,7 +52,8 @@ export const Input = styled.input`
   }
 `;
 
-export const History = styled.div``;
+export const History = styled.div`
+`;
 
 export const HistoryHeading = styled.h5`
   padding: 1.1em 0 0.8em 0;
@@ -64,6 +66,9 @@ export const HistoryList = styled.ul`
 export const HistoryListItem = styled.li`
   font-size: 1.1em;
   padding: 0.2em 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 SearchBlockWrap.displayName = 'SearchBlockWrap';

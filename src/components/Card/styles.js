@@ -4,6 +4,7 @@ export const CardWrap = styled.div`
   background-color: #EEEEEE;
   border-radius: 15px;
   padding: 1em;
+  overflow: hidden;
 `;
 
 export const CardHeading = styled.div`
